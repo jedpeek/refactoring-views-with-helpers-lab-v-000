@@ -6,5 +6,6 @@ class Song < ActiveRecord::Base
   end
 
   def artist_name=(name)
+    @song = Song.find_by_id(params[:id])
   end
 end
