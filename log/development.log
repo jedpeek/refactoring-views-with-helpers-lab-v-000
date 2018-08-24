@@ -871,3 +871,37 @@ ActionView::Template::Error (undefined method `name' for nil:NilClass):
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.5ms)
+
+
+Started GET "/artists/2" for 4.30.5.194 at 2018-08-24 01:27:13 +0000
+Cannot render console from 4.30.5.194! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.6ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "id"."id" = '2' LIMIT 1[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.5ms)
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: id.id: SELECT  "artists".* FROM "artists" WHERE "id"."id" = '2' LIMIT 1):
+  app/controllers/artists_controller.rb:6:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.6ms)
+
+
+Started GET "/artists/2" for 4.30.5.194 at 2018-08-24 01:27:14 +0000
+Cannot render console from 4.30.5.194! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mArtist Load (0.6ms)[0m  SELECT  "artists".* FROM "artists" WHERE "id"."id" = '2' LIMIT 1
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.6ms)
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: id.id: SELECT  "artists".* FROM "artists" WHERE "id"."id" = '2' LIMIT 1):
+  app/controllers/artists_controller.rb:6:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.8ms)
