@@ -4,8 +4,7 @@ module ArtistsHelper
     if artist
       artist.name
     else
-      llink_to "Add Artist", edit_artist_path(artist)
+      llink_to "Add Artist", edit_song_path(artist)
     end
-
   end
 end
